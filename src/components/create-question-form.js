@@ -3,9 +3,7 @@
 
 import React, { Component, PropTypes } from "react";
 import { randomString, getTrimmedValue, makeFormItem } from "../util";
-const buttonWidth = {
-    width:"7rem"
-};
+
 const QUESTION = "question";
 const IS_RIGHT = "isRight";
 const ID = "id";
@@ -31,7 +29,7 @@ class CreateQuestionForm extends Component {
                         </fieldset>
                         <fieldset className="form-group">
                             <label>Question text:</label>
-                            <textarea rows="4" className="form-control" ref={ QUESTION }></textarea>
+                            <textarea rows="4" className="form-control" ref={ QUESTION }/>
                         </fieldset>
 
                         <div className="checkbox">
@@ -41,16 +39,15 @@ class CreateQuestionForm extends Component {
                         </div>
 
                         <button type="submit"
-                                style={ buttonWidth }
-                                className="btn btn-primary mh-1"
+                                className="btn btn-primary mh-1 btn-width"
                                 onSubmit={ saveQuestion(this.props, this.refs) }>
                             Save
                         </button>
                         <button type="submit"
-                                style={ buttonWidth }
+                                style={ BUTTON_WIDTH }
                                 className="btn btn-default mh-1">Clear</button>
                         <button type="submit"
-                                style={ buttonWidth }
+                                style={ BUTTON_WIDTH }
                                 className="btn btn-danger pull-right mh-1">Cancel</button>
                     </form>
                 </div>

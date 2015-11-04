@@ -31,20 +31,17 @@ var fieldSetCreator = (fieldDescriptor, index) => {
     var { valueGen, displayName, type, id } = fieldDescriptor;
     var defaultValue = valueGen ? valueGen() : "";
     return (
-        <div className="card">
-            <div className="card-header">Create new quiz</div>
-            <div className="card-block">
-                <fieldset className="from-group mb-1" key={ index }>
-                    <label>
-                        { displayName }
-                    </label>
-                    <input type={ type }
-                           ref={ id }
-                           defaultValue={ defaultValue }
-                           className="form-control"
-                        />
-                </fieldset>
-            </div>
+        <div className="card-block" key={ index }>
+            <fieldset className="from-group mb-1" >
+                <label>
+                    { displayName }
+                </label>
+                <input type={ type }
+                       ref={ id }
+                       defaultValue={ defaultValue }
+                       className="form-control"
+                />
+            </fieldset>
         </div>
     );
 };
@@ -59,10 +56,13 @@ class CreateQuizForm extends Component {
     render() {
         return (
             <form onSubmit={ createQuiz(this.props, this.refs)}>
-                { FIELD_DESCRIPTORS.map(fieldSetCreator) }
-                <button className="btn btn-primary mt-10" type="submit">
-                    Add
-                </button>
+                <div className="card">
+                    <div className="card-header">Create new quiz</div>
+                    { FIELD_DESCRIPTORS.map(fieldSetCreator) }
+                    <button className="btn btn-primary mt-10" type="submit">
+                        Add
+                    </button>
+                </div>
             </form>
         );
     }

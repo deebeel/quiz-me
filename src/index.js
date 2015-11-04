@@ -4,11 +4,12 @@ import { render } from "react-dom";
 import React  from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-import { App, Home, Quiz } from "./containers";
+import { App, Home, Quiz, QuizView } from "./containers";
 var routes = (
     <Route path="/" component={ App }>
         <IndexRoute component={ Home }/>
         <Route path="/quiz/:quiz" component={ Quiz }/>
+        <Route path="/start/:quiz" component={ QuizView }/>
         <Route path="*" component={ Home }/>
     </Route>
 );

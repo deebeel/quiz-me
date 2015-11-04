@@ -1,0 +1,18 @@
+{
+  "stage": 0,
+  "blacklist":[
+    "regenerator",
+    "es6.blockScoping",
+    "es5.properties.mutators",
+    "es3.memberExpressionLiterals",
+    "es3.propertyLiterals",
+    "es6.constants",
+    "es6.forOf",
+    "es6.properties.computed",
+    "es6.properties.shorthand",
+    "es6.templateLiterals"
+  ],
+  "optional":[
+    "asyncToGenerator"
+  ]
+}
